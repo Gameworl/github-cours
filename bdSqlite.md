@@ -70,7 +70,7 @@ init?(path: String){
 // dans le fichier SQLITE
 func createTable(_ tableName: String, columnInfo: [String]) -> Int32 {
         var dbStatus: Int32 = SQLITE_ERROR
-        let sqlCmd: String = "create table if not exist \(tableName) " + "(\(columnInfo.joined(separator: ",")))"
+        let sqlCmd: String = "create table if not exists \(tableName) " + "(\(columnInfo.joined(separator: ",")))"
         dbStatus = sqlite3_exec(dbPtr, String(sqlCmd), nil, nil, nil)
         
         if dbStatus == SQLITE_OK {
@@ -114,7 +114,7 @@ func createTable(_ tableName: String, columnInfo: [String]) -> Int32 {
         if db != nil {
             let dbStatus = db!.createTable(
                 dbTableName,
-                columnInfo: ["id interger primary key autoincrement",
+                columnInfo: ["id integer primary key autoincrement",
                 "title text",
                 "desc text",
                 "date_creation date"]
@@ -177,8 +177,8 @@ func insert(_ tableName: String, rowInfo: [String: String]) -> Int32 {
 ````Swift
 // dans le fichier SQLITE
 func fetch(_ tableName: String, cond: String?, sortBy order: String?, offset: Int?) -> OpaquePointer {
-        var dbStatus: Int32 = SQLITE_ERROR
-        
+        var dbStatus: Int32 = SQLITE_ERROR;
+        let rowCount = 15;
         var sqlCmd: String = "select * from \(tableName)"
         if let condition = cond {
             sqlCmd += " where \(condition)"
@@ -342,7 +342,7 @@ func delete(_ tableName: String, cond: String?) -> Int32 {
     func deleteAll(_ tableName: String) -> Int32 {
             var dbStatus: Int32 = SQLITE_ERROR
 
-            let sqlCmd: String = "delete from (tableName)"
+            let sqlCmd: String = "delete from \(tableName)"
 
             var statement: OpaquePointer? = nil
             dbStatus = sqlite3_prepare_v2(self.dbPtr, String(sqlCmd), -1, &statement, nil)
