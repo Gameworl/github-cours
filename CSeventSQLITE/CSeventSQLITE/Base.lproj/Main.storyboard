@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CSeventSQLITE" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dC-qC-fAm">
+                                <rect key="frame" x="100" y="194" width="214" height="30"/>
+                                <state key="normal" title="Créer une table"/>
+                                <connections>
+                                    <action selector="createTable:" destination="BYZ-38-t0r" eventType="touchUpInside" id="00q-7U-YOg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0f-Ab-kzD">
+                                <rect key="frame" x="156" y="251" width="102" height="30"/>
+                                <state key="normal" title="insert CSEvent"/>
+                                <connections>
+                                    <action selector="insertEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wq7-er-TWe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uMw-Kk-Uf3">
+                                <rect key="frame" x="153" y="320" width="107" height="30"/>
+                                <state key="normal" title="Delete CSEvent"/>
+                                <connections>
+                                    <action selector="deleteEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8u4-HI-x0a"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYm-eR-d8I">
+                                <rect key="frame" x="149" y="381" width="111" height="30"/>
+                                <state key="normal" title="update CSEvent"/>
+                                <connections>
+                                    <action selector="updateEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4DR-sw-19J"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vf2-oq-N6l">
+                                <rect key="frame" x="149" y="446" width="117" height="30"/>
+                                <state key="normal" title="Afficher CSEvent"/>
+                                <connections>
+                                    <action selector="listeEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z1I-tS-Eyo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXU-9l-m2f">
+                                <rect key="frame" x="122" y="500" width="165" height="30"/>
+                                <state key="normal" title="Supprimer toute la table"/>
+                                <connections>
+                                    <action selector="deleteAllEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BWT-9z-q1P"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8dC-qC-fAm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="0Ra-ft-m02"/>
+                            <constraint firstItem="8dC-qC-fAm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="2l4-pc-sQo"/>
+                            <constraint firstItem="RXU-9l-m2f" firstAttribute="top" secondItem="vf2-oq-N6l" secondAttribute="bottom" constant="24" id="GY8-OR-QhM"/>
+                            <constraint firstItem="uMw-Kk-Uf3" firstAttribute="top" secondItem="q0f-Ab-kzD" secondAttribute="bottom" constant="39" id="gHh-Mh-Iw4"/>
+                            <constraint firstItem="rYm-eR-d8I" firstAttribute="top" secondItem="uMw-Kk-Uf3" secondAttribute="bottom" constant="31" id="gey-su-6EL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8dC-qC-fAm" secondAttribute="trailing" constant="100" id="srV-py-Byw"/>
+                            <constraint firstItem="vf2-oq-N6l" firstAttribute="top" secondItem="rYm-eR-d8I" secondAttribute="bottom" constant="35" id="vTa-kf-wfZ"/>
+                            <constraint firstItem="q0f-Ab-kzD" firstAttribute="top" secondItem="8dC-qC-fAm" secondAttribute="bottom" constant="27" id="zLD-5I-8lq"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="76"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
